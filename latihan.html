@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b72">
+  <title>Pendaftaran Workshop Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <p>DASAR TEKNOLOGI WEB · SESI 11</p>
+    <h1>Pendaftaran Workshop Web</h1>
+    <div class="sub">Isi data peserta dan pilih tanggal kehadiran. Pendaftaran yang berhasil akan muncul di daftar peserta.</div>
+  </header>
+
+  <main>
+    <section class="panel" aria-labelledby="form-title">
+      <h2 id="form-title">Data peserta</h2>
+      <p class="intro">Semua kolom wajib diisi. Pastikan alamat email dan nomor WhatsApp benar.</p>
+
+      <form id="formDaftar" novalidate>
+        <div class="field">
+          <label for="nama">Nama Lengkap <span class="required" aria-hidden="true">*</span></label>
+          <input id="nama" name="nama" autocomplete="name" required aria-describedby="errorNama">
+          <p class="error" id="errorNama" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email <span class="required" aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="errorEmail">
+          <p class="error" id="errorEmail" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="whatsapp">Nomor WhatsApp <span class="required" aria-hidden="true">*</span></label>
+          <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="Contoh: 081234567890" required aria-describedby="hintWA errorWA">
+          <p class="hint" id="hintWA">Masukkan 10–15 digit; tanda +, spasi, atau tanda hubung boleh digunakan.</p>
+          <p class="error" id="errorWA" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="tanggal">Tanggal Kehadiran <span class="required" aria-hidden="true">*</span></label>
+          <div class="date-row">
+            <input id="tanggal" name="tanggal" type="date" required aria-describedby="errorTanggal">
+            <button class="secondary" id="hariIni" type="button">Gunakan hari ini</button>
+          </div>
+          <p class="error" id="errorTanggal" aria-live="polite"></p>
+        </div>
+
+        <button class="primary" type="submit">Daftarkan peserta</button>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="note">Tanggal hari ini diisi otomatis. Anda dapat memilih tanggal lain mulai hari ini.</div>
+    </section>
+
+    <section class="panel" aria-labelledby="list-title">
+      <h2 id="list-title">Daftar peserta <span class="count" id="jumlah">(0)</span></h2>
+      <p class="intro">Data yang dikirim akan ditampilkan di sini.</p>
+      <p class="empty" id="kosong">Belum ada peserta terdaftar.</p>
+      <ul class="list" id="daftar" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <footer>Workshop Web · Formulir pendaftaran</footer>
+  <script src="latihan.js"></script>
+</body>
+</html>
